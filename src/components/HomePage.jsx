@@ -32,27 +32,24 @@ const HomePage = () => {
     <Container
       fluid
       style={{
-        backgroundColor: "#F5F5F0",
-        paddingInline: "100px",
-        paddingBlock: "50px"
+        backgroundColor: "#F5F5F0"
       }}
+      className="p-xs-2 p-md-5"
     >
       <Row>
         <p className="customText fs-3 fw-bold">Post di tendenza</p>
       </Row>
-      <Row>
-        <Col md={3}>
-          {(render = true)}
-          {posts.map((post) => (
-            <PostCard
-              key={post.id}
-              descrizione={post.descrizione}
-              data={post.data}
-              username={post.usernameProfessionista}
-              avatar={"non disponibile"}
-            />
-          ))}
-        </Col>
+      <Row className="d-flex justify-content-center">
+        {(render = true)}
+        {posts.map((post) => (
+          <PostCard
+            key={post.id}
+            descrizione={post.descrizione}
+            data={post.data}
+            username={post.usernameProfessionista}
+            avatar={"non disponibile"}
+          />
+        ))}
       </Row>
     </Container>
   );
