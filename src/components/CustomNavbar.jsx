@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 const CustomNavbar = () => {
   return (
-    <Navbar expand="lg" className="custombg customtext">
+    <Navbar expand="lg" className="darkbg customtext">
       <Container>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

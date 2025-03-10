@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
+import PostCard from "./PostCard";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -31,7 +32,7 @@ const HomePage = () => {
     <Container
       fluid
       style={{
-        backgroundColor: "#f8f1e4",
+        backgroundColor: "#F5F5F0",
         paddingInline: "100px",
         paddingBlock: "50px"
       }}
@@ -43,9 +44,13 @@ const HomePage = () => {
         <Col md={3}>
           {(render = true)}
           {posts.map((post) => (
-            <div key={post.id}>
-              <p>{post.descrizione}</p>
-            </div>
+            <PostCard
+              key={post.id}
+              descrizione={post.descrizione}
+              data={post.data}
+              username={post.usernameProfessionista}
+              avatar={"non disponibile"}
+            />
           ))}
         </Col>
       </Row>

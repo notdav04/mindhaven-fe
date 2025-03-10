@@ -1,6 +1,13 @@
-.custombg {
+.darkbg {
+  background-color: #d6c4a0;
+}
+
+.lightbg {
   background-color: #eae0c8;
 }
 .customText {
   color: #536878;
+}
+.brownText {
+  color: #6b4f2a;
 }
