@@ -10,7 +10,7 @@ function App() {
       <BrowserRouter>
         <CustomNavbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/Home" element={<HomePage />} />
           {/* <Route path="/profilo" element={<ProfilePage />} />
           <Route path="/diari" element={<Diari />} />
           <Route path="/professionisti" element={<Professionisti />} />

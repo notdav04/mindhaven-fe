@@ -28,7 +28,17 @@ const HomePage = () => {
   }, [render]);
 
   return (
-    <Container>
+    <Container
+      fluid
+      style={{
+        backgroundColor: "#f8f1e4",
+        paddingInline: "100px",
+        paddingBlock: "50px"
+      }}
+    >
+      <Row>
+        <p className="customText fs-3 fw-bold">Post di tendenza</p>
+      </Row>
       <Row>
         <Col md={3}>
           {(render = true)}
