@@ -5,31 +5,28 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 const CustomNavbar = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="custombg customtext">
       <Container>
-        <Navbar.Brand href="#home">
-          <img
-            src="src/assets/Logo.png"
-            alt="MindHaven Logo"
-            style={{ height: 80 }}
-          />
-        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
+          <Nav className="me-auto d-flex justify-content-between w-100">
+            <div class="d-flex justify-content-center w-25 align-items-center">
+              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/Diari">Diari</Nav.Link>
+              <Nav.Link href="/Professionisti">Professionisti</Nav.Link>
+            </div>
+            <div className="w-25 d-flex justify-content-center align-items-center">
+              <Navbar.Brand href="#home">
+                <img
+                  src="src/assets/Logo.png"
+                  alt="MindHaven Logo"
+                  style={{ height: 80 }}
+                />
+              </Navbar.Brand>
+            </div>
+            <div class="d-flex justify-content-end w-25 align-items-center">
+              <Nav.Link href="/Profilo">Profilo</Nav.Link>
+            </div>
           </Nav>
         </Navbar.Collapse>
       </Container>
