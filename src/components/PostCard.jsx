@@ -4,7 +4,7 @@ const PostCard = ({ descrizione, data, username, avatar }) => {
   return (
     <Col
       md={3}
-      className="lightbg py-3 mx-sm-0 mx-md-4 my-4 rounded-3 fs-6 brownText"
+      className="lightbg py-3 mx-sm-0 mx-md-4 my-4 rounded-3 fs-6 darkText"
     >
       <Container>
         <Row>
