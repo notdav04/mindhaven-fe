@@ -1,0 +1,39 @@
+.hero-section {
+  overflow: hidden;
+  padding: 3rem 0;
+  box-shadow: 0px 17px 20px 1px rgba(255, 255, 255, 0.78);
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("/images/counseling-background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.9);
+  opacity: 0.3;
+  z-index: -1;
+}
+.welcome-box {
+  background-color: #f8f5f1;
+  backdrop-filter: blur(5px);
+  border-left: 5px solid #6d4c41;
+  transition: transform 0.3s ease;
+}
+.welcome-box:hover {
+  transform: translateY(-5px);
+}
+.min-vh-75 {
+  min-height: 75vh;
+}
+.heading-color {
+  color: #5d4037;
+  font-size: 3rem;
+}
+.text-color {
+  color: #6d4c41;
+  font-size: 1.5rem;
+  font-weight: 300;
+}

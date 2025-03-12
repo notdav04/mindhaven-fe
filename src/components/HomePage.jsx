@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import PostCard from "./PostCard";
+import Hero from "./Hero";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -29,29 +30,32 @@ const HomePage = () => {
   }, [render]);
 
   return (
-    <Container
-      fluid
-      style={{
-        backgroundColor: "#F5F5F0"
-      }}
-      className="p-xs-2 p-md-5"
-    >
-      <Row>
-        <p className="customText fs-3 fw-bold">Post di tendenza</p>
-      </Row>
-      <Row className="d-flex justify-content-center">
-        {(render = true)}
-        {posts.map((post) => (
-          <PostCard
-            key={post.id}
-            descrizione={post.descrizione}
-            data={post.data}
-            username={post.usernameProfessionista}
-            avatar={"non disponibile"}
-          />
-        ))}
-      </Row>
-    </Container>
+    <>
+      <Hero />
+      <Container
+        fluid
+        style={{
+          backgroundColor: "#F5F5F0"
+        }}
+        className="p-xs-2 p-md-5"
+      >
+        <Row>
+          <p className="customText fs-3 fw-bold">Post di tendenza</p>
+        </Row>
+        <Row className="d-flex justify-content-center">
+          {(render = true)}
+          {posts.map((post) => (
+            <PostCard
+              key={post.id}
+              descrizione={post.descrizione}
+              data={post.data}
+              username={post.usernameProfessionista}
+              avatar={"non disponibile"}
+            />
+          ))}
+        </Row>
+      </Container>
+    </>
   );
 };
 
