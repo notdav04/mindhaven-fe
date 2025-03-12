@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { Col, Container, Row, Button } from "react-bootstrap";
 
-const PostCard = ({ descrizione, data, username, avatar }) => {
-  const [commenti, setCommenti] = useState(false);
+const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
+  const [commentiSection, setCommentiSection] = useState(false);
 
   const gestioneCommenti = () => {
-    if (commenti == false) {
-      setCommenti(true);
+    if (commentiSection == false) {
+      setCommentiSection(true);
       return;
-    } else if (commenti == true) {
-      setCommenti(false);
+    } else if (commentiSection == true) {
+      setCommentiSection(false);
       return;
     }
   };
@@ -32,12 +32,12 @@ const PostCard = ({ descrizione, data, username, avatar }) => {
               <img src={avatar} alt="avatar professionista" />
               <p className="fw-bold">{username}</p>
             </Col>
-            <Col xs={3} className="offset-1">
+            <Col xs={8} className="offset-1">
               <p>{descrizione}</p>
             </Col>
           </Row>
 
-          <Row>
+          <Row className="pt-5">
             <Col
               xs={4}
               md={4}
@@ -45,14 +45,14 @@ const PostCard = ({ descrizione, data, username, avatar }) => {
               onClick={() => gestioneCommenti()}
             >
               <Button className="d-inline-block border-0  postButton">
-                {!commenti && "mostra commenti"}
-                {commenti && "nascondi commenti"}
+                {!commentiSection && "mostra commenti"}
+                {commentiSection && "nascondi commenti"}
               </Button>
             </Col>
           </Row>
         </Container>
       </Col>
-      {commenti && (
+      {commentiSection && (
         <Col
           xs={12}
           md={4}
@@ -61,6 +61,17 @@ const PostCard = ({ descrizione, data, username, avatar }) => {
           <Container>
             <Row className=" border-1 border-bottom">
               <p className="my-0 py-0">Commenti:</p>
+            </Row>
+            <Row
+              className="overflow-y-auto"
+              style={{ maxHeight: "404px", minHeight: "200px" }}
+            >
+              {commenti.map((commento) => (
+                <Row key={commento.id}>
+                  <Col xs={4}>{commento.professionista.username}</Col>
+                  <Col xs={8}>{commento.testo}</Col>
+                </Row>
+              ))}
             </Row>
           </Container>
         </Col>

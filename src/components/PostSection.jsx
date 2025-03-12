@@ -28,8 +28,8 @@ const PostSection = () => {
     fetchpost();
   }, [render]);
   return (
-    <Container className="ms-md-5 ps-md-5 lightbg">
-      <p className="darkText fs-3 fw-bold">Post </p>
+    <Container className="ms-md-5 ps-md-5 lightbg ">
+      <p className="darkText pt-3 fs-3 fw-bold">Post </p>
       <Row className="d-flex justify-content-start">
         {(render = true)}
         {posts.map((post) => (
@@ -38,6 +38,7 @@ const PostSection = () => {
             descrizione={post.descrizione}
             data={post.data}
             username={post.usernameProfessionista}
+            commenti={post.commenti}
             avatar={"non disponibile"}
           />
         ))}

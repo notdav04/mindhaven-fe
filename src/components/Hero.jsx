@@ -10,7 +10,7 @@ const Hero = () => {
             <Col md={8} sm={12}>
               <div className="welcome-box p-4 p-md-5 rounded-3 shadow-lg">
                 <h1 className="mb-4 fw-bold heading-color customFont">
-                  <span className="fs-2">Benvenuti in</span> MindHaven
+                  <span className="fs-2">Benvenuto in</span> MindHaven
                 </h1>
                 <p className="lead mb-4 text-color">
                   Uno spazio sicuro dove le parole trovano ascolto e i pensieri
