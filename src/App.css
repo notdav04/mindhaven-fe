@@ -14,6 +14,20 @@
 .lightbg {
   background-color: #e3dacb;
 }
+.postbg {
+  background-color: #f8f5f1;
+}
+.postBorderBottom {
+  border-bottom: 5px solid #6d4c41;
+}
+.postButton {
+  background-color: #6d4c41;
+  color: #e3dacb;
+}
+.postButton:hover {
+  background-color: #6d4c41;
+}
+
 .customText {
   color: #536878;
 }
