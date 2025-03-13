@@ -27,6 +27,10 @@
 .postButton:hover {
   background-color: #6d4c41;
 }
+.postButton:active {
+  background-color: #6d4c41 !important;
+  outline: none;
+}
 
 .customText {
   color: #536878;

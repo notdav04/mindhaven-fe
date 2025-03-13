@@ -13,6 +13,7 @@ const PostSection = () => {
         let postArray = await response.json();
         if (postArray) {
           console.log(postArray);
+
           setPosts(postArray);
         } else {
           console.log("Errore: post non trovati");
@@ -32,7 +33,7 @@ const PostSection = () => {
       <p className="darkText pt-3 fs-3 fw-bold">Post </p>
       <Row className="d-flex justify-content-start">
         {(render = true)}
-        {posts.map((post) => (
+        {posts.reverse().map((post) => (
           <PostCard
             key={post.id}
             descrizione={post.descrizione}

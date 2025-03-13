@@ -21,7 +21,7 @@ const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
         md={7}
         className="postbg py-3 mx-sm-0 mx-md-4 my-4 rounded-3 fs-6 darkText postBorderBottom"
       >
-        <Container className="">
+        <Container className="" style={{ minHeight: "225px" }}>
           <Row className="text-end align-items-center">
             <Col xs={4} className="offset-8">
               <p className="d-inline-block">{data}</p>

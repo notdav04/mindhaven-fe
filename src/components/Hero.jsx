@@ -20,6 +20,7 @@ const Hero = () => {
             </Col>
             <Col md={4}>
               <img
+                className="d-none d-md-block"
                 src="src/assets/HeroImg.png"
                 alt="immagine sezione hero"
                 style={{ scale: "0.8" }}
