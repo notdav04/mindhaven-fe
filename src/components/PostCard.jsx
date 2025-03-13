@@ -63,12 +63,14 @@ const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
               <p className="my-0 py-0">Commenti:</p>
             </Row>
             <Row
-              className="overflow-y-auto"
-              style={{ maxHeight: "404px", minHeight: "200px" }}
+              className="overflow-y-auto scrollable"
+              style={{ maxHeight: "200px", minHeight: "200px" }}
             >
               {commenti.map((commento) => (
-                <Row key={commento.id}>
-                  <Col xs={4}>{commento.professionista.username}</Col>
+                <Row key={commento.id} className="border-bottom border-1 pb-1">
+                  <Col xs={4} style={{ minHeight: "80px" }}>
+                    {commento.usernameProfessionista}
+                  </Col>
                   <Col xs={8}>{commento.testo}</Col>
                 </Row>
               ))}
