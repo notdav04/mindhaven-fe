@@ -97,6 +97,14 @@ const Hero = () => {
                   style={{ scale: "0.8" }}
                 />
               )}
+              {professionistiLocation && (
+                <img
+                  className="d-none d-md-block"
+                  src="src/assets/professionista.png"
+                  alt="immagine sezione hero"
+                  style={{ scale: "0.6" }}
+                />
+              )}
             </Col>
           </Row>
         </Container>

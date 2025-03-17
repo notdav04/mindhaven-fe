@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import CustomNavbar from "./components/CustomNavbar";
 import DiariPage from "./components/DiariPage";
+import ProfessionistiPage from "./components/ProfessionistiPage";
 
 function App() {
   return (

@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import ProfessionistaCard from "./ProfessionistaCard";
+import { Container, Row } from "react-bootstrap";
 
 const ProfessionistiSection = () => {
-  const [professionisti, setProfessionisti] = [];
+  const [professionisti, setProfessionisti] = useState([]);
 
   let render = false;
   const fetchProfessionisti = async () => {
@@ -27,7 +29,26 @@ const ProfessionistiSection = () => {
     fetchProfessionisti();
   }, [render]);
 
-  return <></>;
+  return (
+    <>
+      <Container fluid className=" ps-md-5 pe-md-5 lightbg ">
+        <p className="darkText pt-3 fs-3 fw-bold">Diari </p>
+        <Row className="d-flex justify-content-center pb-3">
+          <div className="w-md-50 w-100 overflow-hidden">
+            <Row>
+              {(render = true)}
+              {professionisti.reverse().map((professionista, index) => (
+                <ProfessionistaCard
+                  key={index}
+                  professionista={professionista}
+                />
+              ))}
+            </Row>
+          </div>
+        </Row>
+      </Container>
+    </>
+  );
 };
 
 export default ProfessionistiSection;

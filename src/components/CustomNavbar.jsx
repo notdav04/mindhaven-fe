@@ -5,7 +5,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 const CustomNavbar = () => {
   return (
-    <Navbar expand="lg" className="darkbg customtext">
+    <Navbar expand="lg" className="darkbg navbarProperties customtext">
       <Container fluid className="mx-5 d-xs-flex justify-content-center">
         <Navbar.Brand href="/Home" className="pb-0">
           <img
@@ -18,7 +18,7 @@ const CustomNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto ms-5 d-md-flex justify-content-between w-100">
-            <div class="d-md-flex justify-content-start w-25 align-items-center">
+            <div className="d-md-flex justify-content-start w-25 align-items-center">
               <Nav.Link href="/Home" className="lightText customFont">
                 Home
               </Nav.Link>
@@ -30,7 +30,7 @@ const CustomNavbar = () => {
               </Nav.Link>
             </div>
             <div className="w-25 d-flex justify-content-center align-items-center"></div>
-            <div class="d-flex justify-content-end w-25 align-items-center ">
+            <div className="d-flex justify-content-end w-25 align-items-center ">
               <Nav.Link
                 href="/Profilo"
                 className="darkText rounded-pill px-5 bg-white customFont fw-bold lightbg"
