@@ -15,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/Home" element={<HomePage />} />
           {/* <Route path="/profilo" element={<ProfilePage />} /> */}
-          <Route path="/diari" element={<DiariPage />} />
-          {/* <Route path="/professionisti" element={<Professionisti />} /> */}
+          <Route path="/Diari" element={<DiariPage />} />
+          <Route path="/Professionisti" element={<ProfessionistiPage />} />
           {/* <Route path="/professionisti" element={<HomePage />} />  */}
         </Routes>
       </BrowserRouter>

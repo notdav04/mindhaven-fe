@@ -6,12 +6,15 @@ const Hero = () => {
   const location = useLocation();
   const [homeLocation, setHomeLocation] = useState(false);
   const [diariLocation, setDiariLocation] = useState(false);
+  const [professionistiLocation, setProfessionistiLocation] = useState(false);
 
   const determinaLocation = () => {
     if (location.pathname == "/Home") {
       setHomeLocation(true);
     } else if (location.pathname == "/Diari") {
       setDiariLocation(true);
+    } else if (location.pathname == "/Professionisti") {
+      setProfessionistiLocation(true);
     }
   };
 
@@ -53,6 +56,25 @@ const Hero = () => {
                       permette di riflettere sulle esperienze vissute e di
                       visualizzare la propria evoluzione nel tempo, offrendo
                       preziosi spunti di consapevolezza e crescita personale.
+                    </p>
+                  </>
+                )}
+                {professionistiLocation && (
+                  <>
+                    <h1 className="mb-4 fw-bold heading-color customFont">
+                      <p>
+                        <span className="fs-2">Incontra i</span> Professionisti
+                      </p>
+                    </h1>
+                    <p className="lead mb-4 text-color">
+                      I professionisti offrono supporto specializzato agli
+                      utenti, guidandoli nel loro percorso di crescita personale
+                      e benessere emotivo. Grazie alla loro esperienza, aiutano
+                      a comprendere sfide, sviluppare strategie efficaci e
+                      trovare nuove prospettive. Questo spazio consente di
+                      entrare in contatto con esperti pronti ad ascoltare e
+                      fornire strumenti concreti per affrontare il cambiamento
+                      con consapevolezza e fiducia.
                     </p>
                   </>
                 )}
