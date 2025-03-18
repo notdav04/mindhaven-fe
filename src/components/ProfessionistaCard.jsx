@@ -1,14 +1,19 @@
 import { Button, Card, Badge, Col } from "react-bootstrap";
 
-const ProfessionistaCard = ({ professionista }) => {
+const ProfessionistaCard = ({ professionista, onSelect }) => {
   const { username, nome, cognome, email } = professionista;
-
+  const handleClick = () => {
+    onSelect(professionista);
+  };
   return (
     <>
       <Col xs={12} md={3} className="mb-3 ">
         <Card
           className=" d-inline-block postBorderBottom "
           style={{ minWidth: "250px" }}
+          onClick={() => {
+            handleClick();
+          }}
         >
           <Card.Img variant="top" src="{avatar}" />
           <Card.Body>

@@ -1,27 +1,33 @@
 import { Col, Container, Row } from "react-bootstrap";
 
-const ProfessionistaDetails = () => {
-  const professionista = null;
-
+const ProfessionistaDetails = ({ professionista }) => {
   return (
     <>
       {professionista && (
-        <Container>
+        <Container className="fullBoxBorder rounded-5 p-5">
           <Row>
             <Col>
-              <p>{professionista.username}</p>
-              <p>
+              <p className="fs-2 customFont fw-bold">
+                {professionista.username}
+              </p>
+              <p className="fs-4">
                 {professionista.nome} {professionista.cognome}
               </p>
             </Col>
           </Row>
+          <p>post del professionista: </p>
           <Row>
-            {professionista.post.map((post, index) => {
-              <Col key={index} md={3}>
-                <div>{professionista.username}</div>
-                <div>{post.testo}</div>
-              </Col>;
-            })}
+            {professionista.listapost &&
+              professionista.listapost.map((post, index) => (
+                <Col
+                  key={index}
+                  md={3}
+                  className="bg-light postBorderBottom rounded-3 me-4 mb-4 customFont"
+                >
+                  <div>{professionista.username}</div>
+                  <div>{post.descrizione}</div>
+                </Col>
+              ))}
           </Row>
         </Container>
       )}

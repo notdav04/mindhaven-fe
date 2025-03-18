@@ -6,6 +6,7 @@ import ProfessionistaDetails from "./ProfessionistaDetails.jsx";
 
 const ProfessionistiSection = () => {
   const [professionisti, setProfessionisti] = useState([]);
+  const [selectedProfessionista, setSelectedProfessionista] = useState();
 
   let render = false;
   const fetchProfessionisti = async () => {
@@ -27,6 +28,10 @@ const ProfessionistiSection = () => {
     }
   };
 
+  const handleSelectedProfessionista = (professionista) => {
+    setSelectedProfessionista(professionista);
+  };
+
   useEffect(() => {
     fetchProfessionisti();
   }, [render]);
@@ -43,12 +48,16 @@ const ProfessionistiSection = () => {
                 <ProfessionistaCard
                   key={index}
                   professionista={professionista}
+                  onSelect={handleSelectedProfessionista}
                 />
               ))}
             </Row>
             <Row xs={0} md={12} className="d-none d-md-inline">
-              <ProfessionistiSlider professionisti={professionisti} />
-              <ProfessionistaDetails />
+              <ProfessionistiSlider
+                professionisti={professionisti}
+                onSelectProfessionista={handleSelectedProfessionista}
+              />
+              <ProfessionistaDetails professionista={selectedProfessionista} />
             </Row>
           </div>
         </Row>
