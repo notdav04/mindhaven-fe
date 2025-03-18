@@ -1,7 +1,7 @@
 import { Button, Card, Badge, Col } from "react-bootstrap";
 
 const ProfessionistaCard = ({ professionista }) => {
-  const { username, nome, cognome, avatar, email } = professionista;
+  const { username, nome, cognome, email } = professionista;
 
   return (
     <>

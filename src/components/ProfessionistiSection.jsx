@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ProfessionistaCard from "./ProfessionistaCard";
 import { Container, Row } from "react-bootstrap";
+import ProfessionistiSlider from "./ProfessionistiSlider.jsx";
+import ProfessionistaDetails from "./ProfessionistaDetails.jsx";
 
 const ProfessionistiSection = () => {
   const [professionisti, setProfessionisti] = useState([]);
@@ -32,10 +34,10 @@ const ProfessionistiSection = () => {
   return (
     <>
       <Container fluid className=" ps-md-5 pe-md-5 lightbg ">
-        <p className="darkText pt-3 fs-3 fw-bold">Diari </p>
+        <p className="darkText pt-3 fs-3 fw-bold">Professionisti </p>
         <Row className="d-flex justify-content-center pb-3">
           <div className="w-md-50 w-100 overflow-hidden">
-            <Row>
+            <Row className="d-md-none">
               {(render = true)}
               {professionisti.reverse().map((professionista, index) => (
                 <ProfessionistaCard
@@ -43,6 +45,10 @@ const ProfessionistiSection = () => {
                   professionista={professionista}
                 />
               ))}
+            </Row>
+            <Row xs={0} md={12} className="d-none d-md-inline">
+              <ProfessionistiSlider professionisti={professionisti} />
+              <ProfessionistaDetails />
             </Row>
           </div>
         </Row>
