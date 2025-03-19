@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import ProfessionistaCard from "./ProfessionistaCard";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ProfessionistiSlider from "./ProfessionistiSlider.jsx";
 import ProfessionistaDetails from "./ProfessionistaDetails.jsx";
 
@@ -52,11 +52,13 @@ const ProfessionistiSection = () => {
                 />
               ))}
             </Row>
-            <Row xs={0} md={12} className="d-none d-md-inline">
-              <ProfessionistiSlider
-                professionisti={professionisti}
-                onSelectProfessionista={handleSelectedProfessionista}
-              />
+            <Row className="d-none d-md-inline">
+              <Col xs={0} md={10} className="offset-1">
+                <ProfessionistiSlider
+                  professionisti={professionisti}
+                  onSelectProfessionista={handleSelectedProfessionista}
+                />
+              </Col>
               <ProfessionistaDetails professionista={selectedProfessionista} />
             </Row>
           </div>

@@ -7,10 +7,13 @@ const ProfessionistaCard = ({ professionista, onSelect }) => {
   };
   return (
     <>
-      <Col xs={12} md={3} className="mb-3 ">
+      <Col xs={12} md={3} className="mb-3 ms-3 ">
         <Card
-          className=" d-inline-block postBorderBottom "
-          style={{ minWidth: "250px" }}
+          className=" d-inline-block postBorderBottom  "
+          style={{
+            minWidth: "250px",
+            boxShadow: "4px 4px 5px -3px rgba(109,76,65,0.5)"
+          }}
           onClick={() => {
             handleClick();
           }}

@@ -1,4 +1,4 @@
-import Hero from "./Hero";
+import Hero from "../Hero";
 import ProfessionistiSection from "./ProfessionistiSection";
 
 const ProfessionistiPage = () => {
@@ -6,6 +6,7 @@ const ProfessionistiPage = () => {
     <>
       <Hero />
       <ProfessionistiSection />
+      <div style={{ minHeight: "500px" }}></div>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import DiariSection from "./DiariSection";
-import Hero from "./Hero";
+import Hero from "../Hero";
 
 const DiariPage = () => {
   return (

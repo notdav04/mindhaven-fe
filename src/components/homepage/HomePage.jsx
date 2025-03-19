@@ -1,6 +1,6 @@
 import { Container, Row } from "react-bootstrap";
 
-import Hero from "./Hero";
+import Hero from "../Hero";
 import PostSection from "./PostSection";
 
 const HomePage = () => {

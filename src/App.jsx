@@ -3,10 +3,10 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./components/HomePage";
+import HomePage from "./components/homepage/HomePage";
 import CustomNavbar from "./components/CustomNavbar";
-import DiariPage from "./components/DiariPage";
-import ProfessionistiPage from "./components/ProfessionistiPage";
+import DiariPage from "./components/diaripage/DiariPage";
+import ProfessionistiPage from "./components/professionistipage/ProfessionistiPage";
 
 function App() {
   return (

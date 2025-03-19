@@ -11,8 +11,8 @@ export default function ProfessionistiSlider({
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1
+    slidesToShow: 4,
+    slidesToScroll: 3
   };
 
   return (

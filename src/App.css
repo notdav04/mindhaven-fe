@@ -49,3 +49,8 @@
 .fs-7 {
   font-size: 0.875rem;
 }
+
+.sliderCard:hover {
+  scale: 1.1;
+  z-index: 99;
+}
