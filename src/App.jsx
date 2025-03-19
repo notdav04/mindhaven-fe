@@ -8,6 +8,7 @@ import HomePage from "./components/homepage/HomePage";
 import CustomNavbar from "./components/CustomNavbar";
 import DiariPage from "./components/diaripage/DiariPage";
 import ProfessionistiPage from "./components/professionistipage/ProfessionistiPage";
+import ProfilePage from "./components/profilepage/ProfilePage";
 import Footer from "./components/Footer";
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
         <CustomNavbar />
         <Routes>
           <Route path="/Home" element={<HomePage />} />
-          {/* <Route path="/profilo" element={<ProfilePage />} /> */}
+          <Route path="/Profilo" element={<ProfilePage />} />
           <Route path="/Diari" element={<DiariPage />} />
           <Route path="/Professionisti" element={<ProfessionistiPage />} />
           {/* <Route path="/professionisti" element={<HomePage />} />  */}
