@@ -55,6 +55,10 @@
   z-index: 99;
 }
 
+.footerSecondary {
+  color: #f8f5f1;
+}
+
 .footerColMiddleBorder {
   border-left: 2px solid #f8f5f1;
 }

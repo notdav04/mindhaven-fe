@@ -14,13 +14,19 @@ const Footer = () => {
               </p>
             </div>
           </Col>
-          <Col className=" lightText footerColMiddleBorder">
+          <Col className=" footerSecondary footerColMiddleBorder">
             <div className="p-3 pt-2">
-              <p className="mb-1 fw-bold fs-5">Contatti:</p>
-              <p className="mb-1"> Email: davide.alonzi26@gmail.com</p>
-              <p>Tel: +39 342-634-7834</p>
+              <p className="mb-1 fw-bold fs-5 lightText">Contatti:</p>
+              <p className="mb-1">
+                {" "}
+                <span className="fw-bold lightText">Email:</span>{" "}
+                davide.alonzi26@gmail.com
+              </p>
+              <p>
+                <span className="fw-bold lightText">Tel:</span> +39 342-634-7834
+              </p>
             </div>
-            <div className="ms-3">
+            <div className="ms-3 lightText">
               <a href="https://github.com/notdav04" className="me-4">
                 <i
                   class="bi bi-github"
@@ -54,15 +60,15 @@ const Footer = () => {
                   style={{ color: "#f8f5f1", fontSize: "25px" }}
                 ></i>
               </a>
-              <a href="">
+              {/* <a href="">
                 <i
                   class="bi bi-discord"
                   style={{ color: "#f8f5f1", fontSize: "25px" }}
                 ></i>
-              </a>
+              </a> */}
             </div>
             <div className="pt-4 ps-3">
-              <p className="fw-bold fs-5">Alonzi Davide </p>
+              <p className="fw-bold fs-5 lightText">Alonzi Davide </p>
             </div>
           </Col>
         </Row>
