@@ -6,7 +6,6 @@ const ProfessionistiPage = () => {
     <>
       <Hero />
       <ProfessionistiSection />
-      <div style={{ minHeight: "500px" }}></div>
     </>
   );
 };

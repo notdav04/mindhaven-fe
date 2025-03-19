@@ -9,10 +9,13 @@ export default function ProfessionistiSlider({
 }) {
   var settings = {
     dots: false,
-    infinite: false,
-    speed: 500,
+    infinite: true,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 1500,
     slidesToShow: 4,
-    slidesToScroll: 3
+    slidesToScroll: 1,
+    cssEase: "linear"
   };
 
   return (
