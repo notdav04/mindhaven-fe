@@ -44,7 +44,7 @@ const ProfessionistiSection = () => {
           <div className="w-md-50 w-100 overflow-hidden">
             <Row className="d-md-none">
               {(render = true)}
-              {professionisti.reverse().map((professionista, index) => (
+              {[...professionisti].reverse().map((professionista, index) => (
                 <ProfessionistaCard
                   key={index}
                   professionista={professionista}
