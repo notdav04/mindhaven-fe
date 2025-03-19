@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./App.css";
@@ -7,6 +8,7 @@ import HomePage from "./components/homepage/HomePage";
 import CustomNavbar from "./components/CustomNavbar";
 import DiariPage from "./components/diaripage/DiariPage";
 import ProfessionistiPage from "./components/professionistipage/ProfessionistiPage";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
           <Route path="/Professionisti" element={<ProfessionistiPage />} />
           {/* <Route path="/professionisti" element={<HomePage />} />  */}
         </Routes>
+        <Footer />
+        <div style={{ minHeight: "500px" }}></div>
       </BrowserRouter>
     </>
   );
