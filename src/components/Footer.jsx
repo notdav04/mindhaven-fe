@@ -26,10 +26,10 @@ const Footer = () => {
               <p className="mb-1">
                 {" "}
                 <span className="fw-bold lightText">Email:</span>{" "}
-                davide.alonzi26@gmail.com
+                mindhaven.it@gmail.com
               </p>
               <p>
-                <span className="fw-bold lightText">Tel:</span> +39 342-634-7834
+                <span className="fw-bold lightText">Tel:</span> +39 123-456-7890
               </p>
             </div>
             <div className="ms-3 lightText">
