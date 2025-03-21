@@ -4,7 +4,7 @@ import RegistrazioneCard from "./RegistrazioneCard";
 import { useState } from "react";
 
 const LandingSection = () => {
-  const [activeCard, setActiveCard] = useState("registrazione");
+  const [activeCard, setActiveCard] = useState("login");
   const [rotate, setRotate] = useState(true);
   const handleLoginClick = () => {
     setRotate(true);
@@ -22,7 +22,7 @@ const LandingSection = () => {
 
   return (
     <>
-      <Container className="m-md-5  p-5 postbg postBorderBottom rounded-5 ">
+      <Container className="mx-md-auto mt-5  p-5 postbg postBorderBottom rounded-5 ">
         <Row>
           <Col md={6} className="my-auto p-5 ">
             <h1 className="mb-4 fw-bold heading-color customFont">

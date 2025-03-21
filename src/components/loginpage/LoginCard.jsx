@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Row, Button, Col } from "react-bootstrap";
+import { Container, Row, Button, Col, Form } from "react-bootstrap";
 
 const LoginCard = ({ onClick }) => {
   const [password, setPassword] = useState(false);
@@ -16,33 +16,44 @@ const LoginCard = ({ onClick }) => {
       <Row>
         <p className="text-end fw-bold fs-5">Login</p>
       </Row>
+      <Form>
+        <Form.Group controlId="username" className="mb-3">
+          <Form.Label>Username</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Inserisci il tuo username"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-4">
+          <Form.Label className="d-flex justify-content-between">
+            <span className="m-0">Password:</span>
 
-      <Row className="mb-2">
-        <Col xs={12}>
-          <p className="m-0">Username:</p>
-        </Col>
-        <Col xs={12}>
-          <input className="w-100" type="text" />
-        </Col>
-      </Row>
-      <Row className="mb-2">
-        <Col xs={8}>
-          <p className="m-0">Password:</p>
-        </Col>
-        <Col xs={4} className="text-end">
-          {password ? (
-            <i class="bi bi-eye-slash fs-5" onClick={showPassword}></i>
-          ) : (
-            <i class="bi bi-eye fs-5" onClick={showPassword}></i>
-          )}
-        </Col>
-        <Col xs={12}>
-          <input className="w-100" type={password ? "text" : "password"} />
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Button className="postButton w-100 border-0">Login</Button>
-      </Row>
+            {password ? (
+              <i
+                class="bi bi-eye-slash"
+                onClick={showPassword}
+                style={{ margin: "0", cursor: "pointer" }}
+              ></i>
+            ) : (
+              <i
+                class="bi bi-eye"
+                onClick={showPassword}
+                style={{ margin: "0", cursor: "pointer" }}
+              ></i>
+            )}
+          </Form.Label>
+          <Form.Control
+            type={password ? "text" : "password"}
+            placeholder="Inserisci la tua password"
+            required
+          ></Form.Control>
+        </Form.Group>
+
+        <Button type="submit" className="postButton w-100 border-0">
+          Login
+        </Button>
+      </Form>
 
       <p className="position-absolute bottom-0 text-center fs-7 ">
         Non hai un account?{" "}
