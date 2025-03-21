@@ -1,7 +1,9 @@
+import LandingSection from "./LandingSection";
+
 const LoginPage = () => {
   return (
     <>
-      <Hero />
+      <LandingSection />
     </>
   );
 };

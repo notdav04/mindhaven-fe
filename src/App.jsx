@@ -10,6 +10,7 @@ import DiariPage from "./components/diaripage/DiariPage";
 import ProfessionistiPage from "./components/professionistipage/ProfessionistiPage";
 import ProfilePage from "./components/profilepage/ProfilePage";
 import Footer from "./components/Footer";
+import LoginPage from "./components/loginpage/LoginPage";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/Profilo" element={<ProfilePage />} />
           <Route path="/Diari" element={<DiariPage />} />
           <Route path="/Professionisti" element={<ProfessionistiPage />} />
-          {/* <Route path="/professionisti" element={<HomePage />} />  */}
+          <Route path="/" element={<LoginPage />} />
         </Routes>
         <Footer />
         <div style={{ minHeight: "500px" }}></div>
