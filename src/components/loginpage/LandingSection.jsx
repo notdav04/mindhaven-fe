@@ -22,9 +22,9 @@ const LandingSection = () => {
 
   return (
     <>
-      <Container className="m-5 p-5 postbg postBorderBottom rounded-5 ">
+      <Container className="m-md-5  p-5 postbg postBorderBottom rounded-5 ">
         <Row>
-          <Col md={4} className="my-auto">
+          <Col md={6} className="my-auto p-5 ">
             <h1 className="mb-4 fw-bold heading-color customFont">
               <p>
                 <span className="fs-2">Entra in</span> MindHaven
@@ -36,12 +36,12 @@ const LandingSection = () => {
               benessere.
             </p>
           </Col>
-          <Col xs={12} md={6} className="offset-md-2">
+          <Col xs={12} md={6} className="">
             <Container
               className="fullBoxBorder lightbg rounded-3  "
               style={{
                 minHeight: "350px",
-                maxWidth: "250px",
+                maxWidth: "300px",
                 boxShadow: "7px 7px 5px -3px rgba(109,76,65,0.5)",
                 transition: "transform 1s ease-in-out",
                 transform: rotate ? "rotateY(0deg)" : "rotateY(180deg)"
