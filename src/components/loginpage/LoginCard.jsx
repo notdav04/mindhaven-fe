@@ -31,13 +31,13 @@ const LoginCard = ({ onClick }) => {
 
             {password ? (
               <i
-                class="bi bi-eye-slash"
+                className="bi bi-eye-slash"
                 onClick={showPassword}
                 style={{ margin: "0", cursor: "pointer" }}
               ></i>
             ) : (
               <i
-                class="bi bi-eye"
+                className="bi bi-eye"
                 onClick={showPassword}
                 style={{ margin: "0", cursor: "pointer" }}
               ></i>
