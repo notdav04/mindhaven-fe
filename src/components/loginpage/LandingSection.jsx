@@ -24,7 +24,7 @@ const LandingSection = () => {
     <>
       <Container className="mx-md-auto mt-5  p-5 postbg postBorderBottom rounded-5 ">
         <Row>
-          <Col md={6} className="my-auto p-5 ">
+          <Col md={6} className="my-auto p-md-5 p-sm-4  ">
             <h1 className="mb-4 fw-bold heading-color customFont">
               <p>
                 <span className="fs-2">Entra in</span> MindHaven

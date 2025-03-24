@@ -40,7 +40,8 @@ const LoginCard = ({ onClick }) => {
         body: JSON.stringify(utente)
       });
       if (response.ok) {
-        console.log("utente loggato: " + utente);
+        const data = await response.json();
+        console.log("utente loggato: " + JSON.stringify(data));
         navigate("/Home");
       } else {
         console.log("errore nel login utente!");
