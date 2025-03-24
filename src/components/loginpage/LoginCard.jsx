@@ -1,14 +1,52 @@
 import { useState } from "react";
 import { Container, Row, Button, Col, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const LoginCard = ({ onClick }) => {
-  const [password, setPassword] = useState(false);
+  const [showPassword, setshowPassword] = useState(false);
+  const navigate = useNavigate();
 
-  const showPassword = () => {
-    if (password === true) {
-      setPassword(false);
-    } else if (password === false) {
-      setPassword(true);
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+
+  const utente = {
+    username: username,
+    password: password
+  };
+
+  const showshowPassword = () => {
+    if (showPassword === true) {
+      setshowPassword(false);
+    } else if (showPassword === false) {
+      setshowPassword(true);
+    }
+  };
+
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const loginUtente = async () => {
+    try {
+      let response = await fetch("http://localhost:8080/auth/login/utente", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(utente)
+      });
+      if (response.ok) {
+        console.log("utente loggato: " + utente);
+        navigate("/Home");
+      } else {
+        console.log("errore nel login utente!");
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
   return (
@@ -16,37 +54,46 @@ const LoginCard = ({ onClick }) => {
       <Row>
         <p className="text-end fw-bold fs-5">Login</p>
       </Row>
-      <Form>
+      <Form
+        onSubmit={(event) => {
+          event.preventDefault();
+          loginUtente();
+        }}
+      >
         <Form.Group controlId="username" className="mb-3">
           <Form.Label>Username</Form.Label>
           <Form.Control
             type="text"
             placeholder="Inserisci il tuo username"
             required
+            value={username}
+            onChange={handleUsernameChange}
           />
         </Form.Group>
         <Form.Group className="mb-4">
           <Form.Label className="d-flex justify-content-between">
             <span className="m-0">Password:</span>
 
-            {password ? (
+            {showPassword ? (
               <i
                 className="bi bi-eye-slash"
-                onClick={showPassword}
+                onClick={showshowPassword}
                 style={{ margin: "0", cursor: "pointer" }}
               ></i>
             ) : (
               <i
                 className="bi bi-eye"
-                onClick={showPassword}
+                onClick={showshowPassword}
                 style={{ margin: "0", cursor: "pointer" }}
               ></i>
             )}
           </Form.Label>
           <Form.Control
-            type={password ? "text" : "password"}
+            type={showPassword ? "text" : "password"}
             placeholder="Inserisci la tua password"
             required
+            value={password}
+            onChange={handlePasswordChange}
           ></Form.Control>
         </Form.Group>
 

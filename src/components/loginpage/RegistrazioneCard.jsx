@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Button, Container, Row, Form } from "react-bootstrap";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const RegistrazioneCard = ({ onClick }) => {
   const [step, setStep] = useState(1);
-
+  const navigate = useNavigate();
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
@@ -40,6 +41,7 @@ const RegistrazioneCard = ({ onClick }) => {
       });
       if (response.ok) {
         console.log("utente loggato: " + utente);
+        navigate("/Home");
       } else {
         console.log("errore nel login utente!");
       }
@@ -102,7 +104,11 @@ const RegistrazioneCard = ({ onClick }) => {
             )}
             {step == 2 && (
               <>
-                <Form>
+                <Form
+                  onSubmit={() => {
+                    registrazioneUtente;
+                  }}
+                >
                   <Form.Group controlId="username" className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control
@@ -139,13 +145,7 @@ const RegistrazioneCard = ({ onClick }) => {
                       onChange={handlePasswordChange}
                     ></Form.Control>
                   </Form.Group>
-                  <Button
-                    type="submit"
-                    onClick={() => {
-                      registrazioneUtente();
-                    }}
-                    className="postButton w-100 border-0"
-                  >
+                  <Button type="submit" className="postButton w-100 border-0">
                     Registrati
                   </Button>
                 </Form>
