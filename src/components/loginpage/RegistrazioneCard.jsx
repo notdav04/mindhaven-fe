@@ -7,17 +7,18 @@ const RegistrazioneCard = ({ onClick }) => {
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
+  const utente = {
+    username: username,
+    password: password,
+    ruolo: "USER"
+  };
+
   const showPassword = () => {
     if (password === true) {
       setPassword(false);
     } else if (password === false) {
       setPassword(true);
     }
-  };
-
-  const setCredenziali = () => {
-    console.log("password: " + password);
-    console.log("username: " + username);
   };
 
   const handleUsernameChange = (e) => {
@@ -28,6 +29,44 @@ const RegistrazioneCard = ({ onClick }) => {
     setPassword(e.target.value);
   };
 
+  const loginUtente = async () => {
+    try {
+      let response = await fetch("http://localhost:8080/auth/login/utente", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(utente)
+      });
+      if (response.ok) {
+        console.log("utente loggato: " + utente);
+      } else {
+        console.log("errore nel login utente!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const registrazioneUtente = async () => {
+    try {
+      let response = await fetch("http://localhost:8080/auth/new/utente", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(utente)
+      });
+      if (response.ok) {
+        console.log(utente);
+      } else {
+        console.log("errore nella registrazione ");
+      }
+      loginUtente();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <Container
@@ -103,7 +142,7 @@ const RegistrazioneCard = ({ onClick }) => {
                   <Button
                     type="submit"
                     onClick={() => {
-                      setCredenziali();
+                      registrazioneUtente();
                     }}
                     className="postButton w-100 border-0"
                   >
