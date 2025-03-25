@@ -9,9 +9,9 @@ const NewDiariPage = () => {
   //fetch per ottenere l utente e la data dell ultima pagina aggiunta
   const fetchUtente = async () => {
     try {
-      let response = await fetch("http://localhost/utente/me", {
+      let response = await fetch("http://localhost:8080/utente/me", {
         headers: {
-          Authorization: `Bearer ${token}`
+          authorization: `Bearer ${token}`
         }
       });
       if (response.ok) {
@@ -37,7 +37,7 @@ const NewDiariPage = () => {
   //variabili e funzioni per fetch aggiunta pagina
   const [newPage, setNewPage] = useState("");
 
-  const contenuto = {
+  const contenutoPagina = {
     contenuto: newPage
   };
 
@@ -51,15 +51,18 @@ const NewDiariPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`
+          authorization: `Bearer ${token}`
         },
-        body: JSON.stringify(contenuto)
+        body: JSON.stringify(contenutoPagina)
       });
       if (response.ok) {
-        console.log(contenuto);
+        console.log(contenutoPagina);
         setNewPage("");
       } else {
+        console.log("token nell else: " + token);
         console.log("erorre nell aggiunta della nuova pagina");
+        const errorText = await response.text;
+        throw new Error(errorText);
       }
     } catch (error) {
       console.log(error);
@@ -76,6 +79,7 @@ const NewDiariPage = () => {
   useEffect(() => {
     if (token) {
       fetchUtente();
+      console.log(token);
     }
   }, [token]);
 

@@ -61,10 +61,10 @@ const RegistrazioneCard = ({ onClick }) => {
       });
       if (response.ok) {
         console.log(utente);
+        loginUtente();
       } else {
         console.log("errore nella registrazione ");
       }
-      loginUtente();
     } catch (error) {
       console.log(error);
     }
@@ -105,8 +105,9 @@ const RegistrazioneCard = ({ onClick }) => {
             {step == 2 && (
               <>
                 <Form
-                  onSubmit={() => {
-                    registrazioneUtente;
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    registrazioneUtente();
                   }}
                 >
                   <Form.Group controlId="username" className="mb-3">
