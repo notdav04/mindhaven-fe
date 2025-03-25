@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Container, Row, Form } from "react-bootstrap";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const RegistrazioneCard = ({ onClick }) => {
   const [step, setStep] = useState(1);
