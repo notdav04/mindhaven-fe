@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Button, Form } from "react-bootstrap";
 
 const NewDiariPage = () => {
   const [token, setToken] = useState(null);
@@ -18,12 +18,14 @@ const NewDiariPage = () => {
         const me = await response.json();
         console.log(me);
         const diario = me.diario;
-        const lastPage = diario.pagine[diario.pagine.length - 1];
-        const data = lastPage.data;
-        const today = new Date().toISOString().split("T")[0];
-        if (data !== today) {
-          setShowSection(true);
-        }
+        if (diario.pagine.length > 0) {
+          const lastPage = diario.pagine[diario.pagine.length - 1];
+          const data = lastPage.data;
+          const today = new Date().toISOString().split("T")[0];
+          if (data !== today) {
+            setShowSection(true);
+          }
+        } else setShowSection(true);
       } else {
         console.log("errore nel recupero dell utente");
       }
@@ -55,6 +57,7 @@ const NewDiariPage = () => {
       });
       if (response.ok) {
         console.log(contenuto);
+        setNewPage("");
       } else {
         console.log("erorre nell aggiunta della nuova pagina");
       }
@@ -93,7 +96,7 @@ const NewDiariPage = () => {
               <Form.Label>Nuova pagina:</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Inserisci il tuo username"
+                placeholder="Inserisci il contenuto della pagina"
                 required
                 value={newPage}
                 onChange={handleNewPageChange}
@@ -110,4 +113,4 @@ const NewDiariPage = () => {
   );
 };
 
-export default NewDiariPage();
+export default NewDiariPage;
