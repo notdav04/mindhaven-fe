@@ -107,6 +107,7 @@ const LandingSection = () => {
         const data = await responselogin.json();
         console.log("professionista loggato: " + JSON.stringify(data));
         localStorage.setItem("professionista", JSON.stringify(data));
+        localStorage.setItem("token", data.token);
         localStorage.setItem("ruolo", "PROFESSIONISTA");
         navigate("/Home");
       } else {

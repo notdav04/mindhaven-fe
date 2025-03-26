@@ -65,7 +65,7 @@ const NewDiariPage = () => {
       } else {
         console.log("token nell else: " + token);
         console.log("erorre nell aggiunta della nuova pagina");
-        const errorText = await response.text;
+        const errorText = await response.statusText;
         throw new Error(errorText);
       }
     } catch (error) {
@@ -74,11 +74,8 @@ const NewDiariPage = () => {
   };
 
   useEffect(() => {
-    const utente = localStorage.getItem("utente");
-    if (utente) {
-      const utenteJson = JSON.parse(utente);
-      setToken(utenteJson.token);
-    }
+    const tokenStorage = localStorage.getItem("token");
+    setToken(tokenStorage);
   }, []);
   useEffect(() => {
     if (token) {
