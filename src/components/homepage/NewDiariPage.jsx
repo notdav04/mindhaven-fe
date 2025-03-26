@@ -5,6 +5,7 @@ const NewDiariPage = () => {
   const [token, setToken] = useState(null);
   //variabili per la visualizzazione della sezione
   const [showSection, setShowSection] = useState(false);
+  const [paginaAggiunta, setPaginaAggiunta] = useState(false);
 
   //fetch per ottenere l utente e la data dell ultima pagina aggiunta
   const fetchUtente = async () => {
@@ -18,6 +19,7 @@ const NewDiariPage = () => {
         const me = await response.json();
         console.log(me);
         const diario = me.diario;
+        localStorage.setItem("diario", JSON.stringify(diario));
         if (diario.pagine.length > 0) {
           const lastPage = diario.pagine[diario.pagine.length - 1];
           const data = lastPage.data;
@@ -58,6 +60,8 @@ const NewDiariPage = () => {
       if (response.ok) {
         console.log(contenutoPagina);
         setNewPage("");
+        setShowSection(false);
+        setPaginaAggiunta(true);
       } else {
         console.log("token nell else: " + token);
         console.log("erorre nell aggiunta della nuova pagina");
@@ -80,13 +84,14 @@ const NewDiariPage = () => {
     if (token) {
       fetchUtente();
       console.log(token);
+      setPaginaAggiunta(false);
     }
   }, [token]);
 
   return (
     <>
       {showSection && (
-        <Container className="p-3 border-1 border-black postbg">
+        <Container fluid className="p-3 border-1 border-black postbg">
           <Row>
             <h2>Aggiungi una nuova pagina al tuo diario</h2>
           </Row>
@@ -111,6 +116,19 @@ const NewDiariPage = () => {
               Aggiungi Pagina
             </Button>
           </Form>
+        </Container>
+      )}
+      {paginaAggiunta && (
+        <Container fluid className="p-3 border-1 border-black postbg">
+          <h2>Pagina aggiunta correttamente!</h2>
+          <Button
+            className="postButton border-0"
+            onClick={() => {
+              setPaginaAggiunta(false);
+            }}
+          >
+            Continua
+          </Button>
         </Container>
       )}
     </>

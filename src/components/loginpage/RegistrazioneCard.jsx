@@ -41,6 +41,8 @@ const RegistrazioneCard = ({ onClick }) => {
       });
       if (response.ok) {
         console.log("utente loggato: " + utente);
+        const data = await response.json();
+        localStorage.setItem("utente", JSON.stringify(data));
         navigate("/Home");
       } else {
         console.log("errore nel login utente!");
