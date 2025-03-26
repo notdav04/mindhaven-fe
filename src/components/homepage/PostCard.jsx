@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row, Button, Form } from "react-bootstrap";
 
-const PostCard = ({ descrizione, data, username, avatar, commenti, id }) => {
+const PostCard = ({
+  titolo,
+  descrizione,
+  data,
+  username,
+  avatar,
+  commenti,
+  id
+}) => {
   const [commentiSection, setCommentiSection] = useState(false);
   const [ruolo, setRuolo] = useState(null);
   const idPost = id;
@@ -69,8 +77,11 @@ const PostCard = ({ descrizione, data, username, avatar, commenti, id }) => {
         className="postbg py-3 mx-sm-0 mx-md-4 my-4 rounded-3 fs-6 darkText postBorderBottom"
       >
         <Container className="" style={{ minHeight: "225px" }}>
-          <Row className="text-end align-items-center">
-            <Col xs={4} className="offset-8">
+          <Row className="mb-2">
+            <Col xs={8} className="text-break fw-bold fs-5">
+              {titolo}
+            </Col>
+            <Col xs={4} className=" text-end">
               <p className="d-inline-block">{data}</p>
             </Col>
           </Row>
@@ -80,7 +91,7 @@ const PostCard = ({ descrizione, data, username, avatar, commenti, id }) => {
               <p className="fw-bold">{username}</p>
             </Col>
             <Col xs={8} className="offset-1">
-              <p>{descrizione}</p>
+              <p className="text-break">{descrizione}</p>
             </Col>
           </Row>
 
@@ -137,7 +148,7 @@ const PostCard = ({ descrizione, data, username, avatar, commenti, id }) => {
         >
           <Container>
             <Row className=" border-1 border-bottom">
-              <p className="my-0 py-0">Commenti:</p>
+              <p className="my-0 py-0 fw-bold">Commenti:</p>
             </Row>
             <Row
               className="overflow-y-auto scrollable"

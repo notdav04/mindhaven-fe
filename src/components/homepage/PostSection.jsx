@@ -106,9 +106,10 @@ const PostSection = () => {
         </Row>
         <Row className="d-flex justify-content-start">
           {(render = true)}
-          {posts.reverse().map((post, index) => (
+          {[...posts].reverse().map((post, index) => (
             <PostCard
               key={index}
+              titolo={post.titolo}
               descrizione={post.descrizione}
               data={post.data}
               username={post.usernameProfessionista}
