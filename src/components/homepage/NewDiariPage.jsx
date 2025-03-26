@@ -64,7 +64,7 @@ const NewDiariPage = () => {
         setPaginaAggiunta(true);
       } else {
         console.log("token nell else: " + token);
-        console.log("erorre nell aggiunta della nuova pagina");
+        console.log("errore nell aggiunta della nuova pagina");
         const errorText = await response.statusText;
         throw new Error(errorText);
       }

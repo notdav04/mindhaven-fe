@@ -113,6 +113,7 @@ const PostSection = () => {
               data={post.data}
               username={post.usernameProfessionista}
               commenti={post.commenti}
+              id={post.id}
               avatar={"non disponibile"}
             />
           ))}

@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row, Button, Form } from "react-bootstrap";
 
-const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
+const PostCard = ({ descrizione, data, username, avatar, commenti, id }) => {
   const [commentiSection, setCommentiSection] = useState(false);
   const [ruolo, setRuolo] = useState(null);
+  const idPost = id;
 
   const gestioneCommenti = () => {
     if (commentiSection == false) {
@@ -15,11 +16,49 @@ const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
     }
   };
 
+  //per creazione commento
+  const [token, setToken] = useState(null);
+
   const [commento, setCommento] = useState();
+
+  const bodyCommento = {
+    testo: commento
+  };
+
+  //fetch per creazione commento
+  const creaCommento = async () => {
+    try {
+      let response = await fetch(
+        `http://localhost:8080/professionista/post/${idPost}/commento`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`
+          },
+          body: JSON.stringify(bodyCommento)
+        }
+      );
+      if (response.ok) {
+        console.log(await response);
+        setCommento("");
+      } else {
+        console.log("errore nella creazione del commento");
+        console.log(token);
+        console.log(ruolo);
+        const errorText = await response.statusText;
+        throw new Error(errorText);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     const ruoloStorage = localStorage.getItem("ruolo");
     setRuolo(ruoloStorage);
+    const tokenStorage = localStorage.getItem("token");
+    setToken(tokenStorage);
   }, []);
 
   return (
@@ -51,6 +90,7 @@ const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
                 <Form
                   onSubmit={(event) => {
                     event.preventDefault();
+                    creaCommento();
                   }}
                 >
                   <Form.Group
@@ -103,12 +143,18 @@ const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
               className="overflow-y-auto scrollable"
               style={{ maxHeight: "200px", minHeight: "200px" }}
             >
-              {commenti.map((commento) => (
-                <Row key={commento.id} className="border-bottom border-1 pb-1">
-                  <Col xs={4} style={{ minHeight: "80px" }}>
+              {commenti.map((commento, index) => (
+                <Row key={index} className="border-bottom border-1 pb-1">
+                  <Col
+                    xs={5}
+                    className="text-break"
+                    style={{ minHeight: "80px" }}
+                  >
                     {commento.usernameProfessionista}
                   </Col>
-                  <Col xs={8}>{commento.testo}</Col>
+                  <Col xs={7}>
+                    <p className="m-0 text-break">{commento.testo}</p>
+                  </Col>
                 </Row>
               ))}
             </Row>
