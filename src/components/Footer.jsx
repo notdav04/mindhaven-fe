@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 const Footer = () => {
   return (
     <>
-      <Container fluid className="darkbg mt-4" style={{ minHeight: "300px" }}>
+      <Container fluid className="darkbg " style={{ minHeight: "300px" }}>
         <Row className="p-5">
           <Col xs={12} md={6} className="d-flex justify-content-center ">
             <div>

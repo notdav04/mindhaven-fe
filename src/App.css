@@ -72,3 +72,12 @@
   top: 2rem;
   left: 10%;
 }
+
+.closeModalButton {
+  background-color: #e3dacb;
+  border: 2px solid #e3dacb;
+}
+.closeModalButton:hover {
+  background-color: #e3dacb;
+  border: 2px solid #5d4037;
+}

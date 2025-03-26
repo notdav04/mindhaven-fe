@@ -18,7 +18,7 @@ const ProfessionistaDetails = ({ professionista }) => {
               </p>
             </Col>
           </Row>
-          <p>post del professionista: </p>
+          <p>Post: </p>
           <Row>
             {professionista.listapost &&
               professionista.listapost.map((post, index) => (

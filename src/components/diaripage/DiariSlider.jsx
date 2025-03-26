@@ -12,7 +12,7 @@ export default function DiariSlider({ pagine, username }) {
   };
   return (
     <>
-      <Container className="postbg py-3 rounded-5 postBorderBottom">
+      <Container className="postbg py-3 my-5 rounded-5 postBorderBottom">
         <p className="pb-4 darkText fw-bold fs-3">{username}</p>
 
         <Row>

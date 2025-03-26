@@ -25,7 +25,6 @@ function App() {
           <Route path="/" element={<LoginPage />} />
         </Routes>
         <Footer />
-        <div style={{ minHeight: "500px" }}></div>
       </BrowserRouter>
     </>
   );

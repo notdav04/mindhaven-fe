@@ -43,6 +43,7 @@ const RegistrazioneCard = ({ onClick }) => {
         console.log("utente loggato: " + utente);
         const data = await response.json();
         localStorage.setItem("utente", JSON.stringify(data));
+        localStorage.setItem("ruolo", "USER");
         navigate("/Home");
       } else {
         console.log("errore nel login utente!");

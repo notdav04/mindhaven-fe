@@ -1,8 +1,9 @@
-import { useState } from "react";
-import { Col, Container, Row, Button } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Col, Container, Row, Button, Form } from "react-bootstrap";
 
 const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
   const [commentiSection, setCommentiSection] = useState(false);
+  const [ruolo, setRuolo] = useState(null);
 
   const gestioneCommenti = () => {
     if (commentiSection == false) {
@@ -13,6 +14,13 @@ const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
       return;
     }
   };
+
+  const [commento, setCommento] = useState();
+
+  useEffect(() => {
+    const ruoloStorage = localStorage.getItem("ruolo");
+    setRuolo(ruoloStorage);
+  }, []);
 
   return (
     <>
@@ -38,6 +46,35 @@ const PostCard = ({ descrizione, data, username, avatar, commenti }) => {
           </Row>
 
           <Row className="pt-5">
+            {ruolo == "PROFESSIONISTA" && (
+              <Col xs={12} md={12}>
+                <Form
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                  }}
+                >
+                  <Form.Group
+                    controlId="commento"
+                    className="mb-3 d-flex justify-content-between align-items-center"
+                  >
+                    <Form.Label>Commenta: </Form.Label>
+                    <Form.Control
+                      className="mx-2"
+                      type="text"
+                      placeholder="Inserisci il commento al post "
+                      required
+                      value={commento}
+                      onChange={(e) => {
+                        setCommento(e.target.value);
+                      }}
+                    />
+                    <Button type="submit" className="postButton w-25 border-0">
+                      Commenta
+                    </Button>
+                  </Form.Group>
+                </Form>
+              </Col>
+            )}
             <Col
               xs={4}
               md={4}

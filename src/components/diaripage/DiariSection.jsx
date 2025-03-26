@@ -31,7 +31,7 @@ const DiariSection = () => {
 
   return (
     <>
-      <Container fluid className=" ps-md-5 pe-md-5 lightbg ">
+      <Container fluid className=" ps-md-5  lightbg ">
         <p className="darkText pt-3 fs-3 fw-bold">Diari </p>
         <Row className="d-flex justify-content-center pb-3">
           <div className="w-md-50 w-100 overflow-hidden">

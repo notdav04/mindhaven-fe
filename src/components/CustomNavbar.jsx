@@ -17,7 +17,7 @@ const CustomNavbar = () => {
       location.pathname == "/Home" ||
       location.pathname == "/Diari" ||
       location.pathname == "/Professionisti" ||
-      location.pathname == "Profilo"
+      location.pathname == "/Profilo"
     ) {
       setLocationOk(true);
     } else {
@@ -31,7 +31,7 @@ const CustomNavbar = () => {
     <Navbar expand="lg" className="darkbg navbarProperties customtext">
       <Container fluid className="mx-5 d-xs-flex justify-content-center">
         <Navbar.Brand
-          href={locationOk == true ? "/" : "/Home"}
+          href={locationOk == true ? "/Home" : "/"}
           className="pb-0"
         >
           <img
