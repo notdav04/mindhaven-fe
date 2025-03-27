@@ -87,7 +87,7 @@ const PostSection = () => {
   return (
     <>
       <Container className="ms-md-5 ps-md-5 lightbg ">
-        <Row className="d-flex ps-4 justify-content-center align-items-center">
+        <Row className="d-flex ps-4  align-items-center">
           <Col xs={6}>
             <p className="darkText pt-3 fs-3 fw-bold">Post Recenti </p>
           </Col>
