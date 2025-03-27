@@ -74,7 +74,7 @@ const PostCard = ({
       <Col
         xs={12}
         md={7}
-        className="postbg py-3 mx-sm-0 mx-md-4 my-4 rounded-3 fs-6 darkText postBorderBottom"
+        className="postbg py-3 mx-sm-0 mx-md-4 mb-5 rounded-3 fs-6 darkText postBorderBottom"
       >
         <Container className="" style={{ minHeight: "225px" }}>
           <Row className="mb-2">

@@ -1,8 +1,8 @@
-import { Row, Container } from "react-bootstrap";
+import { Row, Container, Button } from "react-bootstrap";
 import ProfileCard from "./ProfileCard";
 import DiariSlider from "../diaripage/DiariSlider";
 import PostCard from "../homepage/PostCard";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const ProfileSection = () => {
   const [ruolo, setRuolo] = useState();
@@ -63,6 +63,31 @@ const ProfileSection = () => {
     }
   };
 
+  //fetch per eliminazione post professionisti
+  const deletePost = async (idpost) => {
+    try {
+      let response = await fetch(
+        `http://localhost:8080/professionista/post/${idpost}`,
+        {
+          method: "DELETE",
+          headers: {
+            authorization: `Bearer ${token}`
+          }
+        }
+      );
+      if (response.ok) {
+        console.log(`post con id ${idpost} eliminato correttamente`);
+        fetchProfiloProfessionista();
+      } else {
+        console.log("errore nell eliminazione del post");
+        const errorText = await response.statusText;
+        throw new Error(errorText);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     const ruoloStorage = localStorage.getItem("ruolo");
     setRuolo(ruoloStorage);
@@ -110,16 +135,27 @@ const ProfileSection = () => {
               <p className="fw-bold fs-3 mt-5 darkText">Post professionista</p>
               <Row>
                 {[...posts].reverse().map((post, index) => (
-                  <PostCard
-                    key={index}
-                    titolo={post.titolo}
-                    descrizione={post.descrizione}
-                    data={post.data}
-                    username={post.usernameProfessionista}
-                    commenti={post.commenti}
-                    id={post.id}
-                    avatar={"non disponibile"}
-                  />
+                  <React.Fragment key={index}>
+                    <div className="w-50 d-flex justify-content-start mb-1 ms-2">
+                      <Button
+                        className="closeModalButton darkText fw-bold p-1"
+                        onClick={() => {
+                          deletePost(post.id);
+                        }}
+                      >
+                        Elimina Post
+                      </Button>
+                    </div>
+                    <PostCard
+                      titolo={post.titolo}
+                      descrizione={post.descrizione}
+                      data={post.data}
+                      username={post.usernameProfessionista}
+                      commenti={post.commenti}
+                      id={post.id}
+                      avatar={"non disponibile"}
+                    />
+                  </React.Fragment>
                 ))}
               </Row>
             </>
