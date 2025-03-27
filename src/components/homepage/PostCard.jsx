@@ -119,7 +119,7 @@ const PostCard = ({
                         setCommento(e.target.value);
                       }}
                     />
-                    <Button type="submit" className="postButton w-25 border-0">
+                    <Button type="submit" className="postButton  border-0">
                       Commenta
                     </Button>
                   </Form.Group>
