@@ -89,7 +89,9 @@ const PostSection = () => {
       <Container className="ms-md-5 ps-md-5 lightbg ">
         <Row className="d-flex ps-4  align-items-center">
           <Col xs={6}>
-            <p className="darkText pt-3 fs-3 fw-bold">Post Recenti </p>
+            <p className="darkText pt-3 fs-3 fw-bold customFont2">
+              Post Recenti{" "}
+            </p>
           </Col>
           {ruolo == "PROFESSIONISTA" && (
             <Col xs={6}>
@@ -104,7 +106,7 @@ const PostSection = () => {
             </Col>
           )}
         </Row>
-        <Row className="d-flex justify-content-start">
+        <Row className="d-flex justify-content-start align-content-center">
           {(render = true)}
           {[...posts].reverse().map((post, index) => (
             <PostCard
@@ -115,7 +117,7 @@ const PostSection = () => {
               username={post.usernameProfessionista}
               commenti={post.commenti}
               id={post.id}
-              avatar={"non disponibile"}
+              avatar={post.avatarProfessionista}
             />
           ))}
         </Row>

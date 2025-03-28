@@ -45,7 +45,7 @@ const Hero = () => {
                 {diariLocation && (
                   <>
                     <h1 className="mb-4 fw-bold heading-color customFont">
-                      <p>
+                      <p className="">
                         <span className="fs-2">Scopri i</span> Diari
                       </p>
                     </h1>

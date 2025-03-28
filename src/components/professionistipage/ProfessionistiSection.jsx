@@ -7,6 +7,7 @@ import ProfessionistaDetails from "./ProfessionistaDetails.jsx";
 const ProfessionistiSection = () => {
   const [professionisti, setProfessionisti] = useState([]);
   const [selectedProfessionista, setSelectedProfessionista] = useState();
+  const [avatarProfessionista, setAvatarProfessionista] = useState();
 
   let render = false;
   const fetchProfessionisti = async () => {
@@ -28,8 +29,12 @@ const ProfessionistiSection = () => {
     }
   };
 
-  const handleSelectedProfessionista = (professionista) => {
+  const handleSelectedProfessionista = (
+    professionista,
+    professionistaAvatar
+  ) => {
     setSelectedProfessionista(professionista);
+    setAvatarProfessionista(professionistaAvatar);
   };
 
   useEffect(() => {
@@ -39,7 +44,9 @@ const ProfessionistiSection = () => {
   return (
     <>
       <Container fluid className=" ps-md-5 pe-md-5 lightbg ">
-        <p className="darkText pt-3 fs-3 fw-bold">Professionisti </p>
+        <p className="darkText pt-3 fs-3 fw-bold customFont2">
+          Professionisti{" "}
+        </p>
         <Row className="d-flex justify-content-center pb-3">
           <div className="w-md-50 w-100 overflow-hidden">
             <Row className="d-md-none">
@@ -59,7 +66,10 @@ const ProfessionistiSection = () => {
                   onSelectProfessionista={handleSelectedProfessionista}
                 />
               </Col>
-              <ProfessionistaDetails professionista={selectedProfessionista} />
+              <ProfessionistaDetails
+                professionista={selectedProfessionista}
+                professionistaAvatar={avatarProfessionista}
+              />
             </Row>
           </div>
         </Row>

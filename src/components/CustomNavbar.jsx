@@ -28,7 +28,10 @@ const CustomNavbar = () => {
     determinaLocation();
   }, [location]);
   return (
-    <Navbar expand="lg" className="darkbg navbarProperties customtext">
+    <Navbar
+      expand="lg"
+      className="darkbg navbarProperties customtext customFont2"
+    >
       <Container fluid className="mx-5 d-xs-flex justify-content-center">
         <Navbar.Brand
           href={locationOk == true ? "/Home" : "/"}

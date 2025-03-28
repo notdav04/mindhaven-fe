@@ -15,12 +15,14 @@ const ProfileCard = ({
   username: initialUsername,
   nome: initialNome,
   cognome: initialCognome,
-  email: initialEmail
+  email: initialEmail,
+  avatar: initialAvatar
 }) => {
   const [username, setUsername] = useState(initialUsername);
   const [nome, setNome] = useState(initialNome);
   const [cognome, setCognome] = useState(initialCognome);
   const [email, setEmail] = useState(initialEmail);
+
   const [showModal, setShowModal] = useState(false);
   const [token, setToken] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
@@ -119,6 +121,18 @@ const ProfileCard = ({
   return (
     <>
       <Container className="postbg  w-75 darkText rounded-3 p-3">
+        {ruolo == "PROFESSIONISTA" && (
+          <Row className="mb-2">
+            <Col xs={6}>
+              <img
+                src={initialAvatar}
+                alt="avatar professionista"
+                style={{ maxHeight: "150px" }}
+                className="rounded-circle"
+              />
+            </Col>
+          </Row>
+        )}
         <Row>
           <Col xs={11}>
             <p className="fw-bold fs-5 text-break">

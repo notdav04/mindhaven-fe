@@ -89,7 +89,7 @@ const DiariSection = () => {
       <Container fluid className=" ps-md-5  lightbg ">
         <Row className="mt-3 ps-3 d-flex align-items-center">
           <Col xs={2}>
-            <p className="darkText pt-3 fs-3 fw-bold">Diari </p>
+            <p className="darkText pt-3 fs-3 fw-bold customFont2">Diari </p>
           </Col>
           {ruolo == "PROFESSIONISTA" && (
             <Col xs={10}>

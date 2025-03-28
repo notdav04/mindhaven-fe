@@ -16,6 +16,7 @@ const ProfileSection = () => {
   const [nome, setNome] = useState();
   const [cognome, setCognome] = useState();
   const [email, setEmail] = useState();
+  const [avatar, setAvatar] = useState();
 
   //variabili per utente o professionista
   const [diario, setDiario] = useState(null);
@@ -37,6 +38,7 @@ const ProfileSection = () => {
         setNome(me.nome);
         setCognome(me.cognome);
         setEmail(me.email);
+        setAvatar(me.avatar);
       } else {
         console.log("errore nel recuper utente!");
         const errorText = await response.statusText;
@@ -124,7 +126,9 @@ const ProfileSection = () => {
     <>
       {username && (
         <Container fluid className="ps-md-5 pe-md-5 lightbg">
-          <p className="darktext pt-3 fs-3 fw-bold darkText">Profilo</p>
+          <p className="darktext pt-3 fs-3 fw-bold darkText customFont2">
+            Profilo
+          </p>
           <Row className="pb-3">
             <ProfileCard
               ruolo={ruolo}
@@ -132,12 +136,15 @@ const ProfileSection = () => {
               nome={nome}
               cognome={cognome}
               email={email}
+              avatar={avatar}
               handleUpdate={handleUpdate}
             />
           </Row>
           {ruolo == "USER" && (
             <>
-              <p className="fw-bold fs-3 mt-5 darkText">Diario utente</p>
+              <p className="fw-bold fs-3 mt-5 darkText customFont2">
+                Diario utente
+              </p>
               <Row className="pb-5">
                 <DiariSlider pagine={diario.pagine} username={username} />
               </Row>
@@ -145,7 +152,9 @@ const ProfileSection = () => {
           )}
           {ruolo == "PROFESSIONISTA" && (
             <>
-              <p className="fw-bold fs-3 mt-5 darkText">Post professionista</p>
+              <p className="fw-bold fs-3 mt-5 darkText customFont2">
+                Post professionista
+              </p>
               <Row>
                 {[...posts].reverse().map((post, index) => (
                   <React.Fragment key={index}>

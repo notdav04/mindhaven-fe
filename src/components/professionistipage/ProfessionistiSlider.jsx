@@ -27,6 +27,7 @@ export default function ProfessionistiSlider({
               <ProfessionistaCard
                 key={index}
                 professionista={professionista}
+                professionistaAvatar={professionista.avatar}
                 onSelect={onSelectProfessionista}
               />
             ))}

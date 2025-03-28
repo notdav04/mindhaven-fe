@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 
-const ProfessionistaDetails = ({ professionista }) => {
+const ProfessionistaDetails = ({ professionista, professionistaAvatar }) => {
   return (
     <>
       {professionista && (
@@ -9,7 +9,17 @@ const ProfessionistaDetails = ({ professionista }) => {
           style={{ boxShadow: "7px 7px 5px -3px rgba(109,76,65,0.5)" }}
         >
           <Row>
-            <Col>
+            <Col xs={6}>
+              <img
+                src={professionistaAvatar}
+                alt="avatar professionista"
+                style={{ maxHeight: "150px" }}
+                className="rounded-circle"
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={6}>
               <p className="fs-2 customFont fw-bold">
                 {professionista.username}
               </p>
