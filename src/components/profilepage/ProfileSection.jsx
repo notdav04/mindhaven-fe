@@ -7,13 +7,17 @@ import React, { useEffect, useState } from "react";
 const ProfileSection = () => {
   const [ruolo, setRuolo] = useState();
   const [token, setToken] = useState();
+  const [update, setUpdate] = useState();
 
+  const handleUpdate = () => {
+    setUpdate(!update);
+  };
   const [username, setUsername] = useState();
   const [nome, setNome] = useState();
   const [cognome, setCognome] = useState();
   const [email, setEmail] = useState();
 
-  //variabili per utente o po=rofessionista
+  //variabili per utente o professionista
   const [diario, setDiario] = useState(null);
   const [posts, setPosts] = useState(null);
 
@@ -106,6 +110,14 @@ const ProfileSection = () => {
     } else if (ruolo == "USER") {
       fetchProfiloUtente();
     }
+  }, [update]);
+
+  useEffect(() => {
+    if (ruolo == "PROFESSIONISTA") {
+      fetchProfiloProfessionista();
+    } else if (ruolo == "USER") {
+      fetchProfiloUtente();
+    }
   }, [ruolo]);
 
   return (
@@ -120,6 +132,7 @@ const ProfileSection = () => {
               nome={nome}
               cognome={cognome}
               email={email}
+              handleUpdate={handleUpdate}
             />
           </Row>
           {ruolo == "USER" && (
