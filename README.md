@@ -1,12 +1,50 @@
-# React + Vite
+Cosa è MindHaven? 🏠
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MindHaven è un'applicazione web rivoluzionaria progettata per connettere persone in difficoltà emotiva con professionisti e volontari qualificati, garantendo anonimato, accessibilità e supporto continuo.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Missione 🌟
 
-## Expanding the ESLint configuration
+In un mondo sempre più stressante, abbiamo creato uno spazio digitale dedicato al benessere mentale, abbattendo le barriere tradizionali che impediscono alle persone di cercare aiuto.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+Obiettivi Principali 🎯
+
+
+🔒 Fornire uno spazio sicuro e riservato per il supporto emotivo
+
+💡 Eliminare stigma e ostacoli nell'accesso ai servizi psicologici
+
+💬 Offrire comunicazione anonima e incontri virtuali con esperti
+
+📓 Sviluppare strumenti di consapevolezza emotiva
+
+
+Funzionalità Chiave 🛠️
+
+👤 Registrazione completamente anonima
+
+📝 Post motivazionali di professionisti
+
+�일 Diario emotivo personalizzabile
+
+
+
+Stack Tecnologico 💻
+
+Frontend: React
+
+Backend: Java + Spring Boot
+
+Database: PostgreSQL
+
+
+Impatto Sociale 🌍
+
+Supportiamo studenti, lavoratori e chiunque attraversi momenti difficili, rendendo il supporto psicologico accessibile, discreto e immediato.
+
+Link al BackEnd: https://github.com/notdav04/MindHaven_BE
+
+Profilo GitHub: https://github.com/notdav04
+
+Profilo Linkedin: https://www.linkedin.com/in/davide-alonzi-65a9a32b6/
