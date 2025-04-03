@@ -13,7 +13,7 @@ const ProfessionistaDetails = ({ professionista, professionistaAvatar }) => {
               <img
                 src={professionistaAvatar}
                 alt="avatar professionista"
-                style={{ maxHeight: "150px" }}
+                style={{ height: "150px", width: "150px" }}
                 className="rounded-circle"
               />
             </Col>

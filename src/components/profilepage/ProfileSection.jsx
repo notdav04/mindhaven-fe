@@ -3,6 +3,7 @@ import ProfileCard from "./ProfileCard";
 import DiariSlider from "../diaripage/DiariSlider";
 import PostCard from "../homepage/PostCard";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const ProfileSection = () => {
   const [ruolo, setRuolo] = useState();
@@ -17,6 +18,7 @@ const ProfileSection = () => {
   const [cognome, setCognome] = useState();
   const [email, setEmail] = useState();
   const [avatar, setAvatar] = useState();
+  const navigate = useNavigate();
 
   //variabili per utente o professionista
   const [diario, setDiario] = useState(null);
@@ -40,8 +42,9 @@ const ProfileSection = () => {
         setEmail(me.email);
         setAvatar(me.avatar);
       } else {
-        console.log("errore nel recuper utente!");
+        console.log("errore nel recupero del professionista!");
         const errorText = await response.statusText;
+        navigate("/");
         throw new Error(errorText);
       }
     } catch (error) {
@@ -63,6 +66,7 @@ const ProfileSection = () => {
         setDiario(me.diario);
       } else {
         console.log("errore nel recupero dell utente");
+        navigate("/");
       }
     } catch (error) {
       console.log(error);
@@ -87,6 +91,7 @@ const ProfileSection = () => {
       } else {
         console.log("errore nell eliminazione del post");
         const errorText = await response.statusText;
+
         throw new Error(errorText);
       }
     } catch (error) {
@@ -139,6 +144,16 @@ const ProfileSection = () => {
               avatar={avatar}
               handleUpdate={handleUpdate}
             />
+          </Row>
+          <Row className="d-flex justify-content-center">
+            <Button
+              className="cursor-pointer postButton lightText border-0 fw-bold w-25 "
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Log out!
+            </Button>
           </Row>
           {ruolo == "USER" && (
             <>

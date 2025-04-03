@@ -26,7 +26,8 @@ const ProfessionistaCard = ({
           <Card.Img
             variant="top"
             src={professionistaAvatar}
-            style={{ scale: "0.5" }}
+            style={{ scale: "0.5", maxHeight: "250px", minHeight: "250px" }}
+            className="rounded-circle"
           />
           <Card.Body>
             <Card.Title className="text-break">{username}</Card.Title>

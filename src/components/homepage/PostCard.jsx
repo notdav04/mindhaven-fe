@@ -89,7 +89,7 @@ const PostCard = ({
             <Col xs={3} className="text-center">
               <img
                 src={avatar}
-                style={{ maxHeight: "75px" }}
+                style={{ height: "75px", width: "75px" }}
                 className="rounded-circle"
                 alt="avatar professionista"
               />
