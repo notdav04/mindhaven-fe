@@ -26,7 +26,7 @@ const Footer = () => {
               <p className="mb-1">
                 {" "}
                 <span className="fw-bold lightText">Email:</span>{" "}
-                mindhaven.it@gmail.com
+                davide.alonzi26@gmail.com
               </p>
               <p>
                 <span className="fw-bold lightText">Tel:</span> +39 123-456-7890
@@ -63,7 +63,7 @@ const Footer = () => {
                   style={{ color: "#f8f5f1", fontSize: "25px" }}
                 ></i>
               </a>
-              {/* <a
+              <a
                 href="https://www.linkedin.com/in/davide-alonzi-65a9a32b6/"
                 className="me-4"
               >
@@ -71,7 +71,7 @@ const Footer = () => {
                   class="bi bi-linkedin"
                   style={{ color: "#f8f5f1", fontSize: "25px" }}
                 ></i>
-              </a> */}
+              </a>
               {/* <a href="">
                 <i
                   class="bi bi-discord"
